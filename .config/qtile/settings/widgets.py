@@ -27,8 +27,8 @@ def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
-        fontsize=60,
-        padding=-12,
+        fontsize=54,
+        padding=-4,
     )
 
 
@@ -38,7 +38,7 @@ def workspaces():
         widget.GroupBox(
             **base(fg='light'),
             font='UbuntuMono Nerd Font',
-            fontsize=28,
+            fontsize=19,
             margin_y=3,
             margin_x=0,
             padding_y=10,
@@ -69,7 +69,7 @@ primary_widgets = [
 
     powerline('color4', 'dark'),
 
-    icon(bg="color4", fontsize=22, text=' '), # Icon: nf-fa-download
+    icon(bg="color4", text=' '), # Icon: nf-fa-download
     
     widget.CheckUpdates(
         background=colors['color4'],
@@ -83,9 +83,9 @@ primary_widgets = [
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", fontsize=22, text=' '),  # Icon: nf-fa-feed
+    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='enp0s3'),
+    widget.Net(**base(bg='color3'), interface='wlp3s0'),
 
     powerline('color2', 'color3'),
 
@@ -95,7 +95,7 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    icon(bg="color1", fontsize=28, text=' '), # Icon: nf-mdi-calendar_clock
+    icon(bg="color1", text=' '), # Icon: nf-mdi-calendar_clock
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
