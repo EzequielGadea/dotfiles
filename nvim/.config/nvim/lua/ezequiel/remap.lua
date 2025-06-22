@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>po", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 
@@ -12,33 +12,28 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
-
--- greatest remap ever
+-- Sobreescribir lo que esta seleccionado por 
+-- lo que esta en clipboard
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- next greatest remap ever : asbjornHaland
+-- Copiar cosas sobre el clipboard del sistema
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
--- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<Esc>")
+-- Quizas algun dia
+-- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+-- Navegar quickfix
+vim.keymap.set("n", "]q", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "[q", "<cmd>cprev<CR>zz")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- Navegar loclist
+vim.keymap.set("n", "]l", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "[l", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- Reemplazo la palabra bajo el cursor por si misma,
+-- util para navegar sobre todas las ocurrencias.
+vim.keymap.set("n", "<leader>rn", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
