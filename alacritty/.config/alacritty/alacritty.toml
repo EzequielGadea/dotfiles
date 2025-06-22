@@ -76,15 +76,15 @@ white = "#e0def4"
 size = 13
 
 [font.bold]
-family = "JetBrains Mono"
+family = "JetBrains Mono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "JetBrains Mono"
+family = "JetBrains Mono Nerd Font"
 style = "MediumItalic"
 
 [font.normal]
-family = "JetBrains Mono"
+family = "JetBrains Mono Nerd Font"
 style = "Regular"
 
 [general]
