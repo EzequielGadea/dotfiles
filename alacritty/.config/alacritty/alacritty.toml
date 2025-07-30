@@ -1,5 +1,6 @@
 [window]
 opacity = 0.85
+decorations = "none"
 
 [colors.primary]
 foreground = "#e0def4"
