@@ -1,0 +1,88 @@
+[user]
+    name = Ezequiel Gadea
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[fetch]
+	prune = 1
+[push]
+	# Push to the set upstream branch being tracked by default.
+	default = simple
+	# Automatically create remotes if they don't exist.
+	autoSetupRemote = true
+[pull]
+	# Default to rebasing on pulls
+	rebase = true
+[fetch]
+	# Always prune when fetching (and pulling).
+	prune = true
+	# Always fetch all remotes.
+	all = true
+	# Write commit graph to speed up some repositories.
+	writeCommitGraph = true
+[gc]
+	# Write commit graph to speed up some repositories.
+	writeCommitGraph = true
+[rerere]
+	# Store and re-use manual conflict resolution changes.
+	enabled = true
+	# Automatically re-apply resolutions if seen again
+	autoupdate = true
+[core]
+	# Exclude everything this file. Used for general exclusions.
+	excludesfile = ~/.gitignore
+	# Set attributes on files. Used for general diff improvements.
+	attributesfile = ~/.gitattributes[diff]
+	# Use the better histogram diff algorithm
+	algorithm = histogram
+	# Use new diff algorithm to make e.g. function diffs look better.
+	compactionheuristic = true
+	# Use a different colour for moved lines than added/modified ones
+	colorMoved = true
+	# Use more Git-internals specific prefixes for diff hunks
+	mnemonicPrefix = true
+	# Detect if a file has been renamed
+	renames = true
+	# Don't prompt for commit messages for merge commits.
+	mergeoptions = --no-edit
+	# Speed up some repositories.
+	commitGraph = true
+	# Output unicode characters (e.g. emoji).
+	quotepath = on
+[help]
+  # Autocorrect mistyped commands.
+	autocorrect = 1
+[diff]
+	# Use the better histogram diff algorithm
+	algorithm = histogram
+	# Use new diff algorithm to make e.g. function diffs look better.
+	compactionheuristic = true
+	# Use a different colour for moved lines than added/modified ones
+	colorMoved = true
+	# Use more Git-internals specific prefixes for diff hunks
+	mnemonicPrefix = true
+	# Detect if a file has been renamed
+	renames = true
+[alias]
+    # Imprimir log de commits en grafo vertical
+    graph = !git log --graph --oneline --decorate
+[apply]                                                       
+    # Cleanup whitespace by default when apply patches. 
+    whitespace = fix
+[log]
+    date = human
+[delta]
+        features = line-numbers decorations
+        syntax-theme = GitHub
+        file-decoration-style = ''
+        hunk-header-decoration-style = ''
+[merge]
+        # Use 3-way diffs.
+        conflictstyle = diff3
+[checkout]
+        # If in doubt about the branch to checkout, pick origin
+        defaultRemote = origin
+
+
+
