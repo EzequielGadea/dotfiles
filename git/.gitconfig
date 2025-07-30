@@ -50,6 +50,7 @@
 	commitGraph = true
 	# Output unicode characters (e.g. emoji).
 	quotepath = on
+	editor = nvim
 [help]
   # Autocorrect mistyped commands.
 	autocorrect = 1
