@@ -3,7 +3,7 @@ return {
 	name = "nvim-treesitter",
 	build = ":TSUpdate",
 	opts = {
-		ensure_installed = {"c", "cpp", "cmake", "lua"},
+		ensure_installed = {"c", "cpp", "cmake", "lua", "haskell", "java", "python"},
 		sync_install = false,
 		highlight = {
 			enable = true,

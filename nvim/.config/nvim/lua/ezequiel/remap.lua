@@ -37,3 +37,11 @@ vim.keymap.set("n", "[l", "<cmd>lprev<CR>zz")
 -- util para navegar sobre todas las ocurrencias.
 vim.keymap.set("n", "<leader>rn", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({
+        max_width = 80,
+        max_height = 15,
+    })
+end)
+
