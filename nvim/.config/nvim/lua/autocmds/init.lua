@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 --
 
-vim.lsp.enable("hls")
+--vim.lsp.enable("hls")
 
 vim.lsp.config('lua_ls', {
   on_init = function(client)
