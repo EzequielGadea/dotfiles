@@ -33,3 +33,5 @@ vim.opt.colorcolumn = "80"
 
 vim.o.winborder = "rounded"
 
+--vim.opt.completeopt = { "menuone", "noselect", "popup" }
+

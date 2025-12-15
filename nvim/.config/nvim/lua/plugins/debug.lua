@@ -1,5 +1,4 @@
 return {
-  {
     "mfussenegger/nvim-dap",
     dependencies = {
       -- UI opcional pero muy útil
@@ -10,6 +9,7 @@ return {
       "jay-babu/mason-nvim-dap.nvim",
       "williamboman/mason.nvim",
     },
+  enabled = false,
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
@@ -48,6 +48,5 @@ return {
       vim.keymap.set("n", "<Leader>dl", dap.run_last)
       vim.keymap.set("n", "<Leader>du", dapui.toggle)
     end,
-  },
 }
 

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+USER="redes"
+HOST="127.0.0.1"
+
+ssh -p 2522 $USER@$HOST << 'EOF'
+SESSION="redes"
+SESSION_ALREADY_EXISTS=$(tmux list-sessions | grep $SESSION)
+
+if [[ $SESSION_ALREADY_EXISTS != "" ]]; then
+    echo "La de tmux ya existe."
+    exit
+fi
+
+tmux new -d -s $SESSION
+
+tmux rename-window -t $SESSION:0 "vim"
+tmux send-keys -t "vim" "cd obligatorio2/reenvio/" Enter 
+tmux send-keys -t "vim" "vim ." Enter
+
+tmux new-window -t $SESSION:1 
+tmux send-keys -t $SESSION:1 "cd obligatorio2/reenvio/" Enter
+
+tmux new-window -t $SESSION:2 -n "mininet" -c "./obligatorio2/"
+tmux send-keys -t $SESSION:2 "./config.sh" Enter
+tmux send-keys -t $SESSION:2 "./run_mininet.sh" Enter
+
+tmux new-window -t $SESSION:3 -n "POX" -c "./obligatorio2/"
+tmux send-keys -t $SESSION:3 "./run_pox.sh" Enter
+
+for i in $(seq 1 5);
+do
+    tmux new-window -t $SESSION:$((3+i)) -n "vhost$i" -c "./obligatorio2/"
+    tmux send-keys -t $SESSION:$((3+i)) "./run_sr.sh 127.0.0.1 vhost$i" Enter
+done
+
+tmux attach-session -t $SESSION
+EOF
+
