@@ -1,0 +1,47 @@
+/*
+:root {
+    --rich-mahogany: #2E1315;
+    --dusty-grape: #6C508B;
+    --charcoal-brown: #3A403E;
+    --midnight-violet: #321630;
+    --coffee-bean: #160B16ff;
+}
+*/
+
+* {
+    font-family: Maple Mono NF;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 0px;
+    background: transparent;
+}
+
+#network,
+#pulseaudio,
+#bat,
+#privacy,
+#cpu,
+#memory,
+#clock,
+#custom-power {
+    margin: 2px;
+    margin-right: 0px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    color: #d8cab8;
+}
+
+.modules-left,
+.modules-right,
+.modules-center {
+    background-color: #2E1315;
+}
+
+.modules-right {
+    padding-right: 12px;
+}
+
+#workspaces button {
+    color: #eee;
+}
+
